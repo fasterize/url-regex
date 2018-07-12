@@ -5,7 +5,7 @@ const tlds = require('tlds');
 module.exports = opts => {
 	opts = Object.assign({strict: true}, opts);
 
-	const protocol = `(?:(?:[a-z]+:)?//)${opts.strict ? '' : '?'}`;
+	const protocol = `(https?://)${opts.strict ? '' : '?'}`;
 	const auth = '(?:\\S+(?::\\S*)?@)?';
 	const ip = ipRegex.v4().source;
 	const host = '(?:(?:[a-z\\u00a1-\\uffff0-9]-*)*[a-z\\u00a1-\\uffff0-9]+)';
